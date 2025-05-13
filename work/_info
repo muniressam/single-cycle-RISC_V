@@ -1,0 +1,347 @@
+m255
+K4
+z2
+!s11f MIXED_VERSIONS
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/intelFPGA/Verilog Projects/UART_RX
+vAdd_PC_Plus4
+Z0 !s110 1726849360
+!i10b 1
+!s100 m]kD36Uf:X1l6L1WYCD8N3
+Z1 !s11b Dg1SIo80bB@j0V0VzS_@n1
+IiXO2DHn50@MzQ8YDQVdin3
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+Z3 dC:/intelFPGA/Verilog Projects/single cycle RISC_V
+w1722889859
+8C:/intelFPGA/Verilog Projects/single cycle RISC_V/Add_PC_Plus4.v
+FC:/intelFPGA/Verilog Projects/single cycle RISC_V/Add_PC_Plus4.v
+!i122 386
+L0 1 11
+Z4 OV;L;2020.1;71
+r1
+!s85 0
+31
+Z5 !s108 1726849360.000000
+!s107 C:/intelFPGA/Verilog Projects/single cycle RISC_V/Add_PC_Plus4.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/intelFPGA/Verilog Projects/single cycle RISC_V/Add_PC_Plus4.v|
+!i113 1
+Z6 o-work work
+Z7 tCvgOpt 0
+n@add_@p@c_@plus4
+vAdd_PC_Target
+R0
+!i10b 1
+!s100 e<2ZP<2]j2`>@0bLU<2@F3
+R1
+IM93cMThWDgN]Dd3>DUOGf1
+R2
+R3
+Z8 w1722889440
+8C:/intelFPGA/Verilog Projects/single cycle RISC_V/Add_PC_Target.v
+FC:/intelFPGA/Verilog Projects/single cycle RISC_V/Add_PC_Target.v
+!i122 387
+Z9 L0 1 12
+R4
+r1
+!s85 0
+31
+R5
+!s107 C:/intelFPGA/Verilog Projects/single cycle RISC_V/Add_PC_Target.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/intelFPGA/Verilog Projects/single cycle RISC_V/Add_PC_Target.v|
+!i113 1
+R6
+R7
+n@add_@p@c_@target
+vALU
+R0
+!i10b 1
+!s100 I?d2>4hU=O?nTgScKZJYK1
+R1
+IHm6Y]_83YG9@H[e1`L:T03
+R2
+R3
+w1726672495
+8C:/intelFPGA/Verilog Projects/single cycle RISC_V/ALU.v
+FC:/intelFPGA/Verilog Projects/single cycle RISC_V/ALU.v
+!i122 388
+L0 1 25
+R4
+r1
+!s85 0
+31
+R5
+!s107 C:/intelFPGA/Verilog Projects/single cycle RISC_V/ALU.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/intelFPGA/Verilog Projects/single cycle RISC_V/ALU.v|
+!i113 1
+R6
+R7
+n@a@l@u
+vControl_Unit
+R0
+!i10b 1
+!s100 ?FhSWe<`bjAZHJ:mC76a81
+R1
+I1>ST?ibm8HKBYkEdN7LQ@1
+R2
+R3
+w1722920669
+8C:/intelFPGA/Verilog Projects/single cycle RISC_V/Control_Unit.v
+FC:/intelFPGA/Verilog Projects/single cycle RISC_V/Control_Unit.v
+!i122 389
+L0 1 136
+R4
+r1
+!s85 0
+31
+R5
+!s107 C:/intelFPGA/Verilog Projects/single cycle RISC_V/Control_Unit.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/intelFPGA/Verilog Projects/single cycle RISC_V/Control_Unit.v|
+!i113 1
+R6
+R7
+n@control_@unit
+vData_Memory
+!s110 1726858525
+!i10b 1
+!s100 mS9e>O0V8RL>aV`R7X8^C2
+R1
+I`J0VQk=3Wo21T0j[Xee8L0
+R2
+R3
+w1726858518
+8C:/intelFPGA/Verilog Projects/single cycle RISC_V/Data_Memory.v
+FC:/intelFPGA/Verilog Projects/single cycle RISC_V/Data_Memory.v
+!i122 406
+Z10 L0 1 21
+R4
+r1
+!s85 0
+31
+!s108 1726858525.000000
+!s107 C:/intelFPGA/Verilog Projects/single cycle RISC_V/Data_Memory.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/intelFPGA/Verilog Projects/single cycle RISC_V/Data_Memory.v|
+!i113 1
+R6
+R7
+n@data_@memory
+vExtend_imm
+Z11 !s110 1726849361
+!i10b 1
+!s100 PHhQTmGG=7F1CV;FQFTL82
+R1
+II>j7`P`T4He^hjXELaY8D2
+R2
+R3
+w1722895405
+8C:/intelFPGA/Verilog Projects/single cycle RISC_V/Extend_imm.v
+FC:/intelFPGA/Verilog Projects/single cycle RISC_V/Extend_imm.v
+!i122 391
+Z12 L0 1 22
+R4
+r1
+!s85 0
+31
+R5
+!s107 C:/intelFPGA/Verilog Projects/single cycle RISC_V/Extend_imm.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/intelFPGA/Verilog Projects/single cycle RISC_V/Extend_imm.v|
+!i113 1
+R6
+R7
+n@extend_imm
+vImm_MUX
+R11
+!i10b 1
+!s100 `_4zTi_hR4E2lLCoGTQWN0
+R1
+I14WE@n^NYl6_78eKaQ;_:2
+R2
+R3
+w1722889681
+8C:/intelFPGA/Verilog Projects/single cycle RISC_V/Imm_MUX.v
+FC:/intelFPGA/Verilog Projects/single cycle RISC_V/Imm_MUX.v
+!i122 392
+R9
+R4
+r1
+!s85 0
+31
+Z13 !s108 1726849361.000000
+!s107 C:/intelFPGA/Verilog Projects/single cycle RISC_V/Imm_MUX.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/intelFPGA/Verilog Projects/single cycle RISC_V/Imm_MUX.v|
+!i113 1
+R6
+R7
+n@imm_@m@u@x
+vInstruction_Memory
+R11
+!i10b 1
+!s100 _JYa1ekE_egNTUoI@JaNP0
+R1
+IVFEPmU>oRY^86EdjSali?2
+R2
+R3
+w1726600696
+8C:/intelFPGA/Verilog Projects/single cycle RISC_V/Instruction_Memory.v
+FC:/intelFPGA/Verilog Projects/single cycle RISC_V/Instruction_Memory.v
+!i122 393
+L0 1 18
+R4
+r1
+!s85 0
+31
+R13
+!s107 C:/intelFPGA/Verilog Projects/single cycle RISC_V/Instruction_Memory.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/intelFPGA/Verilog Projects/single cycle RISC_V/Instruction_Memory.v|
+!i113 1
+R6
+R7
+n@instruction_@memory
+vMUX_3x1
+R11
+!i10b 1
+!s100 eLDimZ[bo4EZ<@4Ya_c]X3
+R1
+I9>zn3IIQ?K:Q`czAdRo:P3
+R2
+R3
+w1722898324
+8C:/intelFPGA/Verilog Projects/single cycle RISC_V/MUX_3x1.v
+FC:/intelFPGA/Verilog Projects/single cycle RISC_V/MUX_3x1.v
+!i122 394
+R12
+R4
+r1
+!s85 0
+31
+R13
+!s107 C:/intelFPGA/Verilog Projects/single cycle RISC_V/MUX_3x1.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/intelFPGA/Verilog Projects/single cycle RISC_V/MUX_3x1.v|
+!i113 1
+R6
+R7
+n@m@u@x_3x1
+vPC
+R11
+!i10b 1
+!s100 8LXS6PR[g3>edK6K<3@DW0
+R1
+ILgb>oIA]9ShiVj^m6^5l02
+R2
+R3
+R8
+8C:/intelFPGA/Verilog Projects/single cycle RISC_V/PC.v
+FC:/intelFPGA/Verilog Projects/single cycle RISC_V/PC.v
+!i122 395
+R10
+R4
+r1
+!s85 0
+31
+R13
+!s107 C:/intelFPGA/Verilog Projects/single cycle RISC_V/PC.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/intelFPGA/Verilog Projects/single cycle RISC_V/PC.v|
+!i113 1
+R6
+R7
+n@p@c
+vPC_Next
+R11
+!i10b 1
+!s100 ??Uccf8NTdKjKZ?]U<9n;0
+R1
+I6V1UN2<;L?kmUomMD9PQQ2
+R2
+R3
+w1722889606
+8C:/intelFPGA/Verilog Projects/single cycle RISC_V/PC_Next.v
+FC:/intelFPGA/Verilog Projects/single cycle RISC_V/PC_Next.v
+!i122 396
+L0 1 10
+R4
+r1
+!s85 0
+31
+R13
+!s107 C:/intelFPGA/Verilog Projects/single cycle RISC_V/PC_Next.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/intelFPGA/Verilog Projects/single cycle RISC_V/PC_Next.v|
+!i113 1
+R6
+R7
+n@p@c_@next
+vRegister_File
+R11
+!i10b 1
+!s100 E9GCWk:g@>Pl7^X1FQH4<2
+R1
+IzE14Yg02zKGQ]<L<9;iIM0
+R2
+R3
+w1726834967
+8C:/intelFPGA/Verilog Projects/single cycle RISC_V/Register_File.v
+FC:/intelFPGA/Verilog Projects/single cycle RISC_V/Register_File.v
+!i122 397
+L0 1 38
+R4
+r1
+!s85 0
+31
+R13
+!s107 C:/intelFPGA/Verilog Projects/single cycle RISC_V/Register_File.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/intelFPGA/Verilog Projects/single cycle RISC_V/Register_File.v|
+!i113 1
+R6
+R7
+n@register_@file
+vRISC_V
+R11
+!i10b 1
+!s100 RO`SmjUQDRYKKCmaQ_X@>2
+R1
+IgKQ?9m[ZQQegOTD9V:7UN1
+R2
+R3
+w1726606026
+8C:/intelFPGA/Verilog Projects/single cycle RISC_V/RICS_V.v
+FC:/intelFPGA/Verilog Projects/single cycle RISC_V/RICS_V.v
+!i122 398
+L0 1 142
+R4
+r1
+!s85 0
+31
+R13
+!s107 C:/intelFPGA/Verilog Projects/single cycle RISC_V/RICS_V.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/intelFPGA/Verilog Projects/single cycle RISC_V/RICS_V.v|
+!i113 1
+R6
+R7
+n@r@i@s@c_@v
+vRISC_V_TB
+!s110 1726858759
+!i10b 1
+!s100 >@eiFc4<]SR`DE@EbGA]^0
+R1
+IKLkl[DhENN]i[GjJdbHlL2
+R2
+R3
+w1726858752
+8C:/intelFPGA/Verilog Projects/single cycle RISC_V/RISC_V_TB.v
+FC:/intelFPGA/Verilog Projects/single cycle RISC_V/RISC_V_TB.v
+!i122 407
+L0 3 42
+R4
+r1
+!s85 0
+31
+!s108 1726858759.000000
+!s107 C:/intelFPGA/Verilog Projects/single cycle RISC_V/RISC_V_TB.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/intelFPGA/Verilog Projects/single cycle RISC_V/RISC_V_TB.v|
+!i113 1
+R6
+R7
+n@r@i@s@c_@v_@t@b

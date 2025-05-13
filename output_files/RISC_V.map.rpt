@@ -1,0 +1,1248 @@
+Analysis & Synthesis report for RISC_V
+Fri Sep 20 22:28:00 2024
+Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Registers Removed During Synthesis
+  9. General Register Statistics
+ 10. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 11. Parameter Settings for User Entity Instance: Top-level Entity: |RISC_V
+ 12. Parameter Settings for User Entity Instance: Control_Unit:u_CU
+ 13. Parameter Settings for User Entity Instance: PC_Next:u_PC_Next
+ 14. Parameter Settings for User Entity Instance: Add_PC_Target:u_PC_Target
+ 15. Parameter Settings for User Entity Instance: Add_PC_Plus4:u_PC_Plus4
+ 16. Parameter Settings for User Entity Instance: PC:u_PC
+ 17. Parameter Settings for User Entity Instance: Instruction_Memory:u_Ins_M
+ 18. Parameter Settings for User Entity Instance: Register_File:u_Reg
+ 19. Parameter Settings for User Entity Instance: Extend_imm:u_imm
+ 20. Parameter Settings for User Entity Instance: Imm_MUX:u_immMUX
+ 21. Parameter Settings for User Entity Instance: ALU:u_ALU
+ 22. Parameter Settings for User Entity Instance: Data_Memory:u_DM
+ 23. Parameter Settings for User Entity Instance: MUX_3x1:u_MUX3
+ 24. Post-Synthesis Netlist Statistics for Top Partition
+ 25. Elapsed Time Per Partition
+ 26. Analysis & Synthesis Messages
+ 27. Analysis & Synthesis Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2024  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++-------------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                        ;
++------------------------------------+------------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Fri Sep 20 22:28:00 2024          ;
+; Quartus Prime Version              ; 23.1std.1 Build 993 05/14/2024 SC Lite Edition ;
+; Revision Name                      ; RISC_V                                         ;
+; Top-level Entity Name              ; RISC_V                                         ;
+; Family                             ; MAX 10                                         ;
+; Total logic elements               ; 2,754                                          ;
+;     Total combinational functions  ; 1,506                                          ;
+;     Dedicated logic registers      ; 1,344                                          ;
+; Total registers                    ; 1344                                           ;
+; Total pins                         ; 67                                             ;
+; Total virtual pins                 ; 0                                              ;
+; Total memory bits                  ; 0                                              ;
+; Embedded Multiplier 9-bit elements ; 0                                              ;
+; Total PLLs                         ; 0                                              ;
+; UFM blocks                         ; 0                                              ;
+; ADC blocks                         ; 0                                              ;
++------------------------------------+------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                              ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                           ; Setting            ; Default Value      ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                           ; 10M08DAF484C8G     ;                    ;
+; Top-level entity name                                            ; RISC_V             ; RISC_V             ;
+; Family name                                                      ; MAX 10             ; Cyclone V          ;
+; Use smart compilation                                            ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                      ; Off                ; Off                ;
+; Restructure Multiplexers                                         ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                              ; Off                ; Off                ;
+; Preserve fewer node names                                        ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                    ; Enable             ; Enable             ;
+; Verilog Version                                                  ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                     ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                         ; Auto               ; Auto               ;
+; Safe State Machine                                               ; Off                ; Off                ;
+; Extract Verilog State Machines                                   ; On                 ; On                 ;
+; Extract VHDL State Machines                                      ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                       ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                   ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                          ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                        ; On                 ; On                 ;
+; Parallel Synthesis                                               ; On                 ; On                 ;
+; DSP Block Balancing                                              ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                               ; On                 ; On                 ;
+; Power-Up Don't Care                                              ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                     ; Off                ; Off                ;
+; Remove Duplicate Registers                                       ; On                 ; On                 ;
+; Ignore CARRY Buffers                                             ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                           ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                            ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                        ; Off                ; Off                ;
+; Ignore LCELL Buffers                                             ; Off                ; Off                ;
+; Ignore SOFT Buffers                                              ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                   ; Off                ; Off                ;
+; Optimization Technique                                           ; Balanced           ; Balanced           ;
+; Carry Chain Length                                               ; 70                 ; 70                 ;
+; Auto Carry Chains                                                ; On                 ; On                 ;
+; Auto Open-Drain Pins                                             ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                            ; Off                ; Off                ;
+; Auto ROM Replacement                                             ; On                 ; On                 ;
+; Auto RAM Replacement                                             ; On                 ; On                 ;
+; Auto DSP Block Replacement                                       ; On                 ; On                 ;
+; Auto Shift Register Replacement                                  ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                  ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                    ; On                 ; On                 ;
+; Strict RAM Replacement                                           ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                           ; Off                ; Off                ;
+; Auto RAM Block Balancing                                         ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                ; Off                ; Off                ;
+; Auto Resource Sharing                                            ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                    ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing              ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                ; Off                ; Off                ;
+; Timing-Driven Synthesis                                          ; On                 ; On                 ;
+; Report Parameter Settings                                        ; On                 ; On                 ;
+; Report Source Assignments                                        ; On                 ; On                 ;
+; Report Connectivity Checks                                       ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                               ; Off                ; Off                ;
+; Synchronization Register Chain Length                            ; 2                  ; 2                  ;
+; Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                  ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report         ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report               ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report        ; 100                ; 100                ;
+; Clock MUX Protection                                             ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                      ; Off                ; Off                ;
+; Block Design Naming                                              ; Auto               ; Auto               ;
+; SDC constraint protection                                        ; Off                ; Off                ;
+; Synthesis Effort                                                 ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal     ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                             ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                               ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                      ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                           ; On                 ; On                 ;
++------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 12          ;
+; Maximum allowed            ; 6           ;
+;                            ;             ;
+; Average used               ; 1.01        ;
+; Maximum used               ; 6           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.1%      ;
+;     Processor 3            ;   0.1%      ;
+;     Processor 4            ;   0.1%      ;
+;     Processor 5            ;   0.1%      ;
+;     Processor 6            ;   0.1%      ;
++----------------------------+-------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                         ;
++----------------------------------+-----------------+------------------------+------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                                           ; Library ;
++----------------------------------+-----------------+------------------------+------------------------------------------------------------------------+---------+
+; RICS_V.v                         ; yes             ; User Verilog HDL File  ; C:/intelFPGA/Verilog Projects/single cycle RISC_V/RICS_V.v             ;         ;
+; Register_File.v                  ; yes             ; User Verilog HDL File  ; C:/intelFPGA/Verilog Projects/single cycle RISC_V/Register_File.v      ;         ;
+; PC_Next.v                        ; yes             ; User Verilog HDL File  ; C:/intelFPGA/Verilog Projects/single cycle RISC_V/PC_Next.v            ;         ;
+; PC.v                             ; yes             ; User Verilog HDL File  ; C:/intelFPGA/Verilog Projects/single cycle RISC_V/PC.v                 ;         ;
+; MUX_3x1.v                        ; yes             ; User Verilog HDL File  ; C:/intelFPGA/Verilog Projects/single cycle RISC_V/MUX_3x1.v            ;         ;
+; Instruction_Memory.v             ; yes             ; User Verilog HDL File  ; C:/intelFPGA/Verilog Projects/single cycle RISC_V/Instruction_Memory.v ;         ;
+; Imm_MUX.v                        ; yes             ; User Verilog HDL File  ; C:/intelFPGA/Verilog Projects/single cycle RISC_V/Imm_MUX.v            ;         ;
+; Extend_imm.v                     ; yes             ; User Verilog HDL File  ; C:/intelFPGA/Verilog Projects/single cycle RISC_V/Extend_imm.v         ;         ;
+; Data_Memory.v                    ; yes             ; User Verilog HDL File  ; C:/intelFPGA/Verilog Projects/single cycle RISC_V/Data_Memory.v        ;         ;
+; Control_Unit.v                   ; yes             ; User Verilog HDL File  ; C:/intelFPGA/Verilog Projects/single cycle RISC_V/Control_Unit.v       ;         ;
+; ALU.v                            ; yes             ; User Verilog HDL File  ; C:/intelFPGA/Verilog Projects/single cycle RISC_V/ALU.v                ;         ;
+; Add_PC_Target.v                  ; yes             ; User Verilog HDL File  ; C:/intelFPGA/Verilog Projects/single cycle RISC_V/Add_PC_Target.v      ;         ;
+; Add_PC_Plus4.v                   ; yes             ; User Verilog HDL File  ; C:/intelFPGA/Verilog Projects/single cycle RISC_V/Add_PC_Plus4.v       ;         ;
+; riscvtest.txt                    ; yes             ; Auto-Found File        ; C:/intelFPGA/Verilog Projects/single cycle RISC_V/riscvtest.txt        ;         ;
++----------------------------------+-----------------+------------------------+------------------------------------------------------------------------+---------+
+
+
++---------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary             ;
++---------------------------------------------+-----------+
+; Resource                                    ; Usage     ;
++---------------------------------------------+-----------+
+; Estimated Total logic elements              ; 2,754     ;
+;                                             ;           ;
+; Total combinational functions               ; 1506      ;
+; Logic element usage by number of LUT inputs ;           ;
+;     -- 4 input functions                    ; 1212      ;
+;     -- 3 input functions                    ; 245       ;
+;     -- <=2 input functions                  ; 49        ;
+;                                             ;           ;
+; Logic elements by mode                      ;           ;
+;     -- normal mode                          ; 1415      ;
+;     -- arithmetic mode                      ; 91        ;
+;                                             ;           ;
+; Total registers                             ; 1344      ;
+;     -- Dedicated logic registers            ; 1344      ;
+;     -- I/O registers                        ; 0         ;
+;                                             ;           ;
+; I/O pins                                    ; 67        ;
+;                                             ;           ;
+; Embedded Multiplier 9-bit elements          ; 0         ;
+;                                             ;           ;
+; Maximum fan-out node                        ; CLK~input ;
+; Maximum fan-out                             ; 1344      ;
+; Total fan-out                               ; 9846      ;
+; Average fan-out                             ; 3.30      ;
++---------------------------------------------+-----------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                           ;
++---------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+------------------------------------+--------------------+--------------+
+; Compilation Hierarchy Node      ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name                ; Entity Name        ; Library Name ;
++---------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+------------------------------------+--------------------+--------------+
+; |RISC_V                         ; 1506 (0)            ; 1344 (0)                  ; 0           ; 0          ; 0            ; 0       ; 0         ; 67   ; 0            ; 0          ; |RISC_V                            ; RISC_V             ; work         ;
+;    |ALU:u_ALU|                  ; 128 (128)           ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |RISC_V|ALU:u_ALU                  ; ALU                ; work         ;
+;    |Add_PC_Plus4:u_PC_Plus4|    ; 30 (30)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |RISC_V|Add_PC_Plus4:u_PC_Plus4    ; Add_PC_Plus4       ; work         ;
+;    |Add_PC_Target:u_PC_Target|  ; 32 (32)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |RISC_V|Add_PC_Target:u_PC_Target  ; Add_PC_Target      ; work         ;
+;    |Control_Unit:u_CU|          ; 30 (30)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |RISC_V|Control_Unit:u_CU          ; Control_Unit       ; work         ;
+;    |Data_Memory:u_DM|           ; 684 (684)           ; 1024 (1024)               ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |RISC_V|Data_Memory:u_DM           ; Data_Memory        ; work         ;
+;    |Extend_imm:u_imm|           ; 21 (21)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |RISC_V|Extend_imm:u_imm           ; Extend_imm         ; work         ;
+;    |Imm_MUX:u_immMUX|           ; 32 (32)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |RISC_V|Imm_MUX:u_immMUX           ; Imm_MUX            ; work         ;
+;    |Instruction_Memory:u_Ins_M| ; 35 (35)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |RISC_V|Instruction_Memory:u_Ins_M ; Instruction_Memory ; work         ;
+;    |MUX_3x1:u_MUX3|             ; 103 (103)           ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |RISC_V|MUX_3x1:u_MUX3             ; MUX_3x1            ; work         ;
+;    |PC:u_PC|                    ; 0 (0)               ; 32 (32)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |RISC_V|PC:u_PC                    ; PC                 ; work         ;
+;    |PC_Next:u_PC_Next|          ; 30 (30)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |RISC_V|PC_Next:u_PC_Next          ; PC_Next            ; work         ;
+;    |Register_File:u_Reg|        ; 381 (381)           ; 288 (288)                 ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |RISC_V|Register_File:u_Reg        ; Register_File      ; work         ;
++---------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+------------------------------------+--------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++---------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                    ;
++-----------------------------------------+---------------------------------------------+
+; Register name                           ; Reason for Removal                          ;
++-----------------------------------------+---------------------------------------------+
+; Register_File:u_Reg|MEM[31][0]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[30][0]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[29][0]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[28][0]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[27][0]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[26][0]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[25][0]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[24][0]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[23][0]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[22][0]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[21][0]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[19][0]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[18][0]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[17][0]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[15][0]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[14][0]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[13][0]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[12][0]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[11][0]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[10][0]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[6][0]           ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[1][0]           ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[31][1]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[30][1]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[29][1]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[28][1]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[27][1]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[26][1]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[25][1]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[24][1]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[23][1]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[22][1]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[21][1]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[19][1]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[18][1]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[17][1]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[15][1]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[14][1]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[13][1]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[12][1]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[11][1]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[10][1]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[6][1]           ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[1][1]           ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[31][2]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[30][2]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[29][2]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[28][2]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[27][2]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[26][2]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[25][2]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[24][2]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[23][2]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[22][2]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[21][2]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[19][2]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[18][2]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[17][2]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[15][2]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[14][2]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[13][2]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[12][2]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[11][2]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[10][2]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[6][2]           ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[1][2]           ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[31][3]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[30][3]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[29][3]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[28][3]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[27][3]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[26][3]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[25][3]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[24][3]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[23][3]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[22][3]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[21][3]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[19][3]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[18][3]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[17][3]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[15][3]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[14][3]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[13][3]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[12][3]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[11][3]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[10][3]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[6][3]           ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[1][3]           ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[31][4]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[30][4]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[29][4]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[28][4]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[27][4]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[26][4]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[25][4]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[24][4]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[23][4]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[22][4]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[21][4]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[19][4]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[18][4]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[17][4]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[15][4]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[14][4]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[13][4]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[12][4]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[11][4]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[10][4]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[6][4]           ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[1][4]           ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[31][5]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[30][5]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[29][5]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[28][5]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[27][5]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[26][5]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[25][5]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[24][5]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[23][5]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[22][5]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[21][5]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[19][5]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[18][5]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[17][5]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[15][5]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[14][5]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[13][5]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[12][5]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[11][5]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[10][5]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[6][5]           ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[1][5]           ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[31][6]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[30][6]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[29][6]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[28][6]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[27][6]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[26][6]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[25][6]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[24][6]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[23][6]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[22][6]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[21][6]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[19][6]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[18][6]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[17][6]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[15][6]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[14][6]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[13][6]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[12][6]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[11][6]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[10][6]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[6][6]           ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[1][6]           ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[31][7]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[30][7]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[29][7]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[28][7]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[27][7]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[26][7]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[25][7]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[24][7]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[23][7]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[22][7]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[21][7]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[19][7]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[18][7]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[17][7]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[15][7]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[14][7]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[13][7]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[12][7]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[11][7]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[10][7]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[6][7]           ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[1][7]           ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[31][8]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[30][8]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[29][8]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[28][8]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[27][8]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[26][8]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[25][8]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[24][8]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[23][8]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[22][8]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[21][8]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[19][8]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[18][8]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[17][8]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[15][8]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[14][8]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[13][8]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[12][8]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[11][8]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[10][8]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[6][8]           ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[1][8]           ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[31][9]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[30][9]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[29][9]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[28][9]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[27][9]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[26][9]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[25][9]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[24][9]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[23][9]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[22][9]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[21][9]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[19][9]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[18][9]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[17][9]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[15][9]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[14][9]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[13][9]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[12][9]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[11][9]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[10][9]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[6][9]           ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[1][9]           ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[31][10]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[30][10]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[29][10]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[28][10]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[27][10]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[26][10]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[25][10]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[24][10]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[23][10]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[22][10]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[21][10]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[19][10]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[18][10]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[17][10]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[15][10]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[14][10]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[13][10]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[12][10]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[11][10]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[10][10]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[6][10]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[1][10]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[31][11]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[30][11]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[29][11]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[28][11]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[27][11]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[26][11]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[25][11]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[24][11]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[23][11]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[22][11]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[21][11]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[19][11]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[18][11]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[17][11]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[15][11]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[14][11]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[13][11]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[12][11]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[11][11]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[10][11]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[6][11]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[1][11]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[31][12]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[30][12]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[29][12]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[28][12]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[27][12]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[26][12]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[25][12]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[24][12]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[23][12]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[22][12]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[21][12]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[19][12]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[18][12]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[17][12]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[15][12]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[14][12]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[13][12]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[12][12]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[11][12]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[10][12]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[6][12]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[1][12]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[31][13]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[30][13]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[29][13]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[28][13]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[27][13]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[26][13]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[25][13]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[24][13]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[23][13]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[22][13]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[21][13]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[19][13]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[18][13]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[17][13]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[15][13]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[14][13]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[13][13]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[12][13]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[11][13]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[10][13]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[6][13]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[1][13]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[31][14]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[30][14]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[29][14]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[28][14]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[27][14]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[26][14]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[25][14]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[24][14]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[23][14]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[22][14]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[21][14]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[19][14]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[18][14]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[17][14]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[15][14]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[14][14]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[13][14]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[12][14]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[11][14]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[10][14]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[6][14]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[1][14]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[31][15]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[30][15]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[29][15]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[28][15]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[27][15]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[26][15]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[25][15]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[24][15]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[23][15]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[22][15]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[21][15]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[19][15]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[18][15]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[17][15]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[15][15]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[14][15]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[13][15]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[12][15]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[11][15]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[10][15]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[6][15]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[1][15]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[31][16]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[30][16]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[29][16]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[28][16]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[27][16]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[26][16]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[25][16]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[24][16]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[23][16]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[22][16]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[21][16]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[19][16]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[18][16]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[17][16]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[15][16]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[14][16]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[13][16]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[12][16]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[11][16]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[10][16]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[6][16]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[1][16]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[31][17]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[30][17]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[29][17]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[28][17]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[27][17]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[26][17]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[25][17]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[24][17]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[23][17]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[22][17]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[21][17]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[19][17]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[18][17]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[17][17]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[15][17]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[14][17]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[13][17]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[12][17]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[11][17]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[10][17]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[6][17]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[1][17]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[31][18]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[30][18]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[29][18]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[28][18]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[27][18]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[26][18]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[25][18]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[24][18]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[23][18]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[22][18]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[21][18]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[19][18]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[18][18]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[17][18]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[15][18]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[14][18]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[13][18]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[12][18]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[11][18]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[10][18]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[6][18]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[1][18]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[31][19]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[30][19]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[29][19]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[28][19]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[27][19]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[26][19]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[25][19]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[24][19]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[23][19]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[22][19]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[21][19]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[19][19]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[18][19]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[17][19]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[15][19]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[14][19]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[13][19]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[12][19]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[11][19]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[10][19]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[6][19]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[1][19]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[31][20]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[30][20]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[29][20]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[28][20]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[27][20]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[26][20]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[25][20]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[24][20]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[23][20]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[22][20]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[21][20]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[19][20]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[18][20]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[17][20]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[15][20]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[14][20]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[13][20]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[12][20]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[11][20]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[10][20]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[6][20]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[1][20]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[31][21]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[30][21]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[29][21]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[28][21]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[27][21]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[26][21]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[25][21]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[24][21]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[23][21]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[22][21]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[21][21]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[19][21]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[18][21]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[17][21]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[15][21]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[14][21]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[13][21]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[12][21]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[11][21]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[10][21]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[6][21]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[1][21]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[31][22]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[30][22]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[29][22]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[28][22]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[27][22]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[26][22]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[25][22]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[24][22]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[23][22]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[22][22]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[21][22]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[19][22]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[18][22]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[17][22]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[15][22]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[14][22]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[13][22]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[12][22]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[11][22]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[10][22]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[6][22]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[1][22]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[31][23]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[30][23]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[29][23]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[28][23]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[27][23]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[26][23]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[25][23]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[24][23]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[23][23]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[22][23]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[21][23]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[19][23]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[18][23]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[17][23]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[15][23]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[14][23]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[13][23]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[12][23]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[11][23]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[10][23]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[6][23]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[1][23]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[31][24]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[30][24]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[29][24]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[28][24]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[27][24]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[26][24]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[25][24]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[24][24]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[23][24]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[22][24]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[21][24]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[19][24]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[18][24]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[17][24]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[15][24]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[14][24]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[13][24]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[12][24]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[11][24]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[10][24]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[6][24]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[1][24]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[31][25]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[30][25]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[29][25]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[28][25]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[27][25]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[26][25]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[25][25]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[24][25]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[23][25]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[22][25]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[21][25]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[19][25]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[18][25]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[17][25]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[15][25]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[14][25]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[13][25]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[12][25]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[11][25]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[10][25]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[6][25]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[1][25]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[31][26]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[30][26]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[29][26]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[28][26]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[27][26]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[26][26]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[25][26]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[24][26]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[23][26]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[22][26]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[21][26]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[19][26]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[18][26]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[17][26]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[15][26]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[14][26]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[13][26]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[12][26]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[11][26]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[10][26]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[6][26]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[1][26]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[31][27]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[30][27]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[29][27]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[28][27]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[27][27]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[26][27]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[25][27]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[24][27]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[23][27]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[22][27]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[21][27]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[19][27]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[18][27]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[17][27]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[15][27]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[14][27]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[13][27]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[12][27]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[11][27]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[10][27]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[6][27]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[1][27]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[31][28]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[30][28]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[29][28]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[28][28]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[27][28]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[26][28]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[25][28]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[24][28]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[23][28]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[22][28]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[21][28]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[19][28]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[18][28]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[17][28]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[15][28]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[14][28]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[13][28]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[12][28]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[11][28]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[10][28]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[6][28]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[1][28]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[31][29]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[30][29]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[29][29]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[28][29]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[27][29]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[26][29]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[25][29]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[24][29]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[23][29]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[22][29]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[21][29]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[19][29]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[18][29]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[17][29]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[15][29]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[14][29]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[13][29]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[12][29]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[11][29]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[10][29]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[6][29]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[1][29]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[31][30]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[30][30]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[29][30]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[28][30]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[27][30]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[26][30]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[25][30]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[24][30]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[23][30]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[22][30]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[21][30]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[19][30]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[18][30]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[17][30]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[15][30]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[14][30]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[13][30]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[12][30]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[11][30]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[10][30]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[6][30]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[1][30]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[31][31]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[30][31]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[29][31]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[28][31]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[27][31]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[26][31]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[25][31]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[24][31]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[23][31]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[22][31]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[21][31]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[19][31]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[18][31]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[17][31]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[15][31]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[14][31]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[13][31]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[12][31]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[11][31]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[10][31]         ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[6][31]          ; Stuck at GND due to stuck port clock_enable ;
+; Register_File:u_Reg|MEM[1][31]          ; Stuck at GND due to stuck port clock_enable ;
+; Total Number of Removed Registers = 704 ;                                             ;
++-----------------------------------------+---------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 1344  ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 32    ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 1314  ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                  ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output        ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------+
+; 4:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |RISC_V|ALU:u_ALU|Mux18           ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |RISC_V|MUX_3x1:u_MUX3|Mux4       ;
+; 8:1                ; 32 bits   ; 160 LEs       ; 128 LEs              ; 32 LEs                 ; No         ; |RISC_V|Register_File:u_Reg|Mux15 ;
+; 32:1               ; 32 bits   ; 672 LEs       ; 256 LEs              ; 416 LEs                ; No         ; |RISC_V|Register_File:u_Reg|Mux54 ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------+
+
+
++------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Top-level Entity: |RISC_V ;
++----------------+-------+-----------------------------------------------+
+; Parameter Name ; Value ; Type                                          ;
++----------------+-------+-----------------------------------------------+
+; width          ; 32    ; Signed Integer                                ;
++----------------+-------+-----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Control_Unit:u_CU ;
++----------------+-------+---------------------------------------+
+; Parameter Name ; Value ; Type                                  ;
++----------------+-------+---------------------------------------+
+; width          ; 32    ; Signed Integer                        ;
++----------------+-------+---------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: PC_Next:u_PC_Next ;
++----------------+-------+---------------------------------------+
+; Parameter Name ; Value ; Type                                  ;
++----------------+-------+---------------------------------------+
+; width          ; 32    ; Signed Integer                        ;
++----------------+-------+---------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Add_PC_Target:u_PC_Target ;
++----------------+-------+-----------------------------------------------+
+; Parameter Name ; Value ; Type                                          ;
++----------------+-------+-----------------------------------------------+
+; width          ; 32    ; Signed Integer                                ;
++----------------+-------+-----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Add_PC_Plus4:u_PC_Plus4 ;
++----------------+-------+---------------------------------------------+
+; Parameter Name ; Value ; Type                                        ;
++----------------+-------+---------------------------------------------+
+; width          ; 32    ; Signed Integer                              ;
++----------------+-------+---------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------+
+; Parameter Settings for User Entity Instance: PC:u_PC ;
++----------------+-------+-----------------------------+
+; Parameter Name ; Value ; Type                        ;
++----------------+-------+-----------------------------+
+; width          ; 32    ; Signed Integer              ;
++----------------+-------+-----------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Instruction_Memory:u_Ins_M ;
++----------------+-------+------------------------------------------------+
+; Parameter Name ; Value ; Type                                           ;
++----------------+-------+------------------------------------------------+
+; width          ; 32    ; Signed Integer                                 ;
++----------------+-------+------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Register_File:u_Reg ;
++----------------+-------+-----------------------------------------+
+; Parameter Name ; Value ; Type                                    ;
++----------------+-------+-----------------------------------------+
+; width          ; 32    ; Signed Integer                          ;
++----------------+-------+-----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Extend_imm:u_imm ;
++----------------+-------+--------------------------------------+
+; Parameter Name ; Value ; Type                                 ;
++----------------+-------+--------------------------------------+
+; width          ; 32    ; Signed Integer                       ;
++----------------+-------+--------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Imm_MUX:u_immMUX ;
++----------------+-------+--------------------------------------+
+; Parameter Name ; Value ; Type                                 ;
++----------------+-------+--------------------------------------+
+; width          ; 32    ; Signed Integer                       ;
++----------------+-------+--------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ALU:u_ALU ;
++----------------+-------+-------------------------------+
+; Parameter Name ; Value ; Type                          ;
++----------------+-------+-------------------------------+
+; width          ; 32    ; Signed Integer                ;
++----------------+-------+-------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Data_Memory:u_DM ;
++----------------+-------+--------------------------------------+
+; Parameter Name ; Value ; Type                                 ;
++----------------+-------+--------------------------------------+
+; width          ; 32    ; Signed Integer                       ;
++----------------+-------+--------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: MUX_3x1:u_MUX3 ;
++----------------+-------+------------------------------------+
+; Parameter Name ; Value ; Type                               ;
++----------------+-------+------------------------------------+
+; width          ; 32    ; Signed Integer                     ;
++----------------+-------+------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 67                          ;
+; cycloneiii_ff         ; 1344                        ;
+;     CLR               ; 30                          ;
+;     ENA               ; 1312                        ;
+;     ENA CLR           ; 2                           ;
+; cycloneiii_lcell_comb ; 1506                        ;
+;     arith             ; 91                          ;
+;         2 data inputs ; 29                          ;
+;         3 data inputs ; 62                          ;
+;     normal            ; 1415                        ;
+;         1 data inputs ; 1                           ;
+;         2 data inputs ; 19                          ;
+;         3 data inputs ; 183                         ;
+;         4 data inputs ; 1212                        ;
+;                       ;                             ;
+; Max LUT depth         ; 18.40                       ;
+; Average LUT depth     ; 10.57                       ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:04     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
+    Info: Processing started: Fri Sep 20 22:27:23 2024
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off RISC_V -c RISC_V
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file risc_v_tb.v
+    Info (12023): Found entity 1: RISC_V_TB File: C:/intelFPGA/Verilog Projects/single cycle RISC_V/RISC_V_TB.v Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file rics_v.v
+    Info (12023): Found entity 1: RISC_V File: C:/intelFPGA/Verilog Projects/single cycle RISC_V/RICS_V.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file register_file.v
+    Info (12023): Found entity 1: Register_File File: C:/intelFPGA/Verilog Projects/single cycle RISC_V/Register_File.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file pc_next.v
+    Info (12023): Found entity 1: PC_Next File: C:/intelFPGA/Verilog Projects/single cycle RISC_V/PC_Next.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file pc.v
+    Info (12023): Found entity 1: PC File: C:/intelFPGA/Verilog Projects/single cycle RISC_V/PC.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file mux_3x1.v
+    Info (12023): Found entity 1: MUX_3x1 File: C:/intelFPGA/Verilog Projects/single cycle RISC_V/MUX_3x1.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file instruction_memory.v
+    Info (12023): Found entity 1: Instruction_Memory File: C:/intelFPGA/Verilog Projects/single cycle RISC_V/Instruction_Memory.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file imm_mux.v
+    Info (12023): Found entity 1: Imm_MUX File: C:/intelFPGA/Verilog Projects/single cycle RISC_V/Imm_MUX.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file extend_imm.v
+    Info (12023): Found entity 1: Extend_imm File: C:/intelFPGA/Verilog Projects/single cycle RISC_V/Extend_imm.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file data_memory.v
+    Info (12023): Found entity 1: Data_Memory File: C:/intelFPGA/Verilog Projects/single cycle RISC_V/Data_Memory.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file control_unit.v
+    Info (12023): Found entity 1: Control_Unit File: C:/intelFPGA/Verilog Projects/single cycle RISC_V/Control_Unit.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file alu.v
+    Info (12023): Found entity 1: ALU File: C:/intelFPGA/Verilog Projects/single cycle RISC_V/ALU.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file add_pc_target.v
+    Info (12023): Found entity 1: Add_PC_Target File: C:/intelFPGA/Verilog Projects/single cycle RISC_V/Add_PC_Target.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file add_pc_plus4.v
+    Info (12023): Found entity 1: Add_PC_Plus4 File: C:/intelFPGA/Verilog Projects/single cycle RISC_V/Add_PC_Plus4.v Line: 1
+Info (12127): Elaborating entity "RISC_V" for the top level hierarchy
+Info (12128): Elaborating entity "Control_Unit" for hierarchy "Control_Unit:u_CU" File: C:/intelFPGA/Verilog Projects/single cycle RISC_V/RICS_V.v Line: 51
+Info (12128): Elaborating entity "PC_Next" for hierarchy "PC_Next:u_PC_Next" File: C:/intelFPGA/Verilog Projects/single cycle RISC_V/RICS_V.v Line: 59
+Info (12128): Elaborating entity "Add_PC_Target" for hierarchy "Add_PC_Target:u_PC_Target" File: C:/intelFPGA/Verilog Projects/single cycle RISC_V/RICS_V.v Line: 67
+Info (12128): Elaborating entity "Add_PC_Plus4" for hierarchy "Add_PC_Plus4:u_PC_Plus4" File: C:/intelFPGA/Verilog Projects/single cycle RISC_V/RICS_V.v Line: 73
+Info (12128): Elaborating entity "PC" for hierarchy "PC:u_PC" File: C:/intelFPGA/Verilog Projects/single cycle RISC_V/RICS_V.v Line: 81
+Info (12128): Elaborating entity "Instruction_Memory" for hierarchy "Instruction_Memory:u_Ins_M" File: C:/intelFPGA/Verilog Projects/single cycle RISC_V/RICS_V.v Line: 87
+Warning (10850): Verilog HDL warning at Instruction_Memory.v(14): number of words (21) in memory file does not match the number of elements in the address range [0:31] File: C:/intelFPGA/Verilog Projects/single cycle RISC_V/Instruction_Memory.v Line: 14
+Warning (10030): Net "ROM.data_a" at Instruction_Memory.v(8) has no driver or initial value, using a default initial value '0' File: C:/intelFPGA/Verilog Projects/single cycle RISC_V/Instruction_Memory.v Line: 8
+Warning (10030): Net "ROM.waddr_a" at Instruction_Memory.v(8) has no driver or initial value, using a default initial value '0' File: C:/intelFPGA/Verilog Projects/single cycle RISC_V/Instruction_Memory.v Line: 8
+Warning (10030): Net "ROM.we_a" at Instruction_Memory.v(8) has no driver or initial value, using a default initial value '0' File: C:/intelFPGA/Verilog Projects/single cycle RISC_V/Instruction_Memory.v Line: 8
+Info (12128): Elaborating entity "Register_File" for hierarchy "Register_File:u_Reg" File: C:/intelFPGA/Verilog Projects/single cycle RISC_V/RICS_V.v Line: 98
+Info (12128): Elaborating entity "Extend_imm" for hierarchy "Extend_imm:u_imm" File: C:/intelFPGA/Verilog Projects/single cycle RISC_V/RICS_V.v Line: 105
+Info (12128): Elaborating entity "Imm_MUX" for hierarchy "Imm_MUX:u_immMUX" File: C:/intelFPGA/Verilog Projects/single cycle RISC_V/RICS_V.v Line: 112
+Info (12128): Elaborating entity "ALU" for hierarchy "ALU:u_ALU" File: C:/intelFPGA/Verilog Projects/single cycle RISC_V/RICS_V.v Line: 121
+Info (12128): Elaborating entity "Data_Memory" for hierarchy "Data_Memory:u_DM" File: C:/intelFPGA/Verilog Projects/single cycle RISC_V/RICS_V.v Line: 130
+Info (12128): Elaborating entity "MUX_3x1" for hierarchy "MUX_3x1:u_MUX3" File: C:/intelFPGA/Verilog Projects/single cycle RISC_V/RICS_V.v Line: 139
+Warning (127007): Memory Initialization File or Hexadecimal (Intel-Format) File "C:/intelFPGA/Verilog Projects/single cycle RISC_V/db/RISC_V.ram0_Instruction_Memory_fd386be.hdl.mif" contains "don't care" values -- overwriting them with 0s
+Info (276014): Found 2 instances of uninferred RAM logic
+    Info (276013): RAM logic "Instruction_Memory:u_Ins_M|ROM" is uninferred because MIF is not supported for the selected family File: C:/intelFPGA/Verilog Projects/single cycle RISC_V/Instruction_Memory.v Line: 8
+    Info (276007): RAM logic "Data_Memory:u_DM|MEM" is uninferred due to asynchronous read logic File: C:/intelFPGA/Verilog Projects/single cycle RISC_V/Data_Memory.v Line: 11
+Warning (127007): Memory Initialization File or Hexadecimal (Intel-Format) File "C:/intelFPGA/Verilog Projects/single cycle RISC_V/db/RISC_V.ram0_Instruction_Memory_fd386be.hdl.mif" contains "don't care" values -- overwriting them with 0s
+Info (286030): Timing-Driven Synthesis is running
+Info (144001): Generated suppressed messages file C:/intelFPGA/Verilog Projects/single cycle RISC_V/output_files/RISC_V.map.smsg
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 2885 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 2 input pins
+    Info (21059): Implemented 65 output pins
+    Info (21061): Implemented 2818 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 7 warnings
+    Info: Peak virtual memory: 4840 megabytes
+    Info: Processing ended: Fri Sep 20 22:28:00 2024
+    Info: Elapsed time: 00:00:37
+    Info: Total CPU time (on all processors): 00:00:42
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in C:/intelFPGA/Verilog Projects/single cycle RISC_V/output_files/RISC_V.map.smsg.
+
+

@@ -1,0 +1,180 @@
+# Compile of Add_PC_Plus4.v was successful.
+# Compile of Add_PC_Target.v was successful.
+# Compile of ALU.v was successful.
+# Compile of Control_Unit.v was successful.
+# Compile of Data_Memory.v was successful.
+# Compile of Extend_imm.v was successful.
+# Compile of Imm_MUX.v was successful.
+# Compile of Instruction_Memory.v was successful.
+# Compile of MUX_3x1.v was successful.
+# Compile of PC.v was successful.
+# Compile of PC_Next.v was successful.
+# Compile of Register_File.v was successful.
+# Compile of RICS_V.v was successful.
+# Compile of RISC_V_TB.v was successful.
+# 14 compiles, 0 failed with no errors.
+vsim -gui work.RISC_V_TB
+# vsim -gui work.RISC_V_TB 
+# Start time: 19:22:51 on Sep 20,2024
+# Loading work.RISC_V_TB
+# Loading work.RISC_V
+# Loading work.Control_Unit
+# Loading work.PC_Next
+# Loading work.Add_PC_Target
+# Loading work.Add_PC_Plus4
+# Loading work.PC
+# Loading work.Instruction_Memory
+# Loading work.Register_File
+# Loading work.Extend_imm
+# Loading work.Imm_MUX
+# Loading work.ALU
+# Loading work.Data_Memory
+# Loading work.MUX_3x1
+# WARNING: No extended dataflow license exists
+add wave -position insertpoint sim:/RISC_V_TB/DUT/*
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: 4G  Hostname: MOUNIR  ProcessID: 11528
+#           Attempting to use alternate WLF file "./wlft1z0y70".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlft1z0y70
+run -all
+# ** Note: $stop    : C:/intelFPGA/Verilog Projects/single cycle RISC_V/RISC_V_TB.v(30)
+#    Time: 10005 us  Iteration: 1  Instance: /RISC_V_TB
+# Break in Module RISC_V_TB at C:/intelFPGA/Verilog Projects/single cycle RISC_V/RISC_V_TB.v line 30
+# Compile of RISC_V_TB.v was successful.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.RISC_V_TB
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# ** Note: $stop    : C:/intelFPGA/Verilog Projects/single cycle RISC_V/RISC_V_TB.v(30)
+#    Time: 1005 us  Iteration: 1  Instance: /RISC_V_TB
+# Break in Module RISC_V_TB at C:/intelFPGA/Verilog Projects/single cycle RISC_V/RISC_V_TB.v line 30
+# Compile of RISC_V_TB.v was successful.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.RISC_V_TB
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# Simulation failed
+# ** Note: $stop    : C:/intelFPGA/Verilog Projects/single cycle RISC_V/RISC_V_TB.v(52)
+#    Time: 175 us  Iteration: 1  Instance: /RISC_V_TB
+# Break in Module RISC_V_TB at C:/intelFPGA/Verilog Projects/single cycle RISC_V/RISC_V_TB.v line 52
+# Compile of RISC_V_TB.v was successful.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.RISC_V_TB
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# ** Note: $stop    : C:/intelFPGA/Verilog Projects/single cycle RISC_V/RISC_V_TB.v(50)
+#    Time: 420 us  Iteration: 0  Instance: /RISC_V_TB
+# Break in Module RISC_V_TB at C:/intelFPGA/Verilog Projects/single cycle RISC_V/RISC_V_TB.v line 50
+# Compile of RISC_V_TB.v was successful.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.RISC_V_TB
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# Break key hit
+# Break in Module RISC_V_TB at C:/intelFPGA/Verilog Projects/single cycle RISC_V/RISC_V_TB.v line 14
+# Compile of RISC_V_TB.v was successful.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.RISC_V_TB
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# ** Note: $stop    : C:/intelFPGA/Verilog Projects/single cycle RISC_V/RISC_V_TB.v(50)
+#    Time: 415 us  Iteration: 0  Instance: /RISC_V_TB
+# Break in Module RISC_V_TB at C:/intelFPGA/Verilog Projects/single cycle RISC_V/RISC_V_TB.v line 50
+quit -sim
+# End time: 21:52:36 on Sep 20,2024, Elapsed time: 2:29:45
+# Errors: 0, Warnings: 1
+vsim -gui work.RISC_V_TB
+# vsim -gui work.RISC_V_TB 
+# Start time: 21:52:47 on Sep 20,2024
+# Loading work.RISC_V_TB
+# Loading work.RISC_V
+# Loading work.Control_Unit
+# Loading work.PC_Next
+# Loading work.Add_PC_Target
+# Loading work.Add_PC_Plus4
+# Loading work.PC
+# Loading work.Instruction_Memory
+# Loading work.Register_File
+# Loading work.Extend_imm
+# Loading work.Imm_MUX
+# Loading work.ALU
+# Loading work.Data_Memory
+# Loading work.MUX_3x1
+# WARNING: No extended dataflow license exists
+run -all
+# ** Note: $stop    : C:/intelFPGA/Verilog Projects/single cycle RISC_V/RISC_V_TB.v(50)
+#    Time: 415 us  Iteration: 0  Instance: /RISC_V_TB
+# Break in Module RISC_V_TB at C:/intelFPGA/Verilog Projects/single cycle RISC_V/RISC_V_TB.v line 50
+add wave -position insertpoint sim:/RISC_V_TB/DUT/*
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: 4G  Hostname: MOUNIR  ProcessID: 11528
+#           Attempting to use alternate WLF file "./wlfttqj3x3".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlfttqj3x3
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+run -all
+# ** Note: $stop    : C:/intelFPGA/Verilog Projects/single cycle RISC_V/RISC_V_TB.v(50)
+#    Time: 415 us  Iteration: 0  Instance: /RISC_V_TB
+# Break in Module RISC_V_TB at C:/intelFPGA/Verilog Projects/single cycle RISC_V/RISC_V_TB.v line 50
+# Compile of RISC_V_TB.v was successful.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.RISC_V_TB
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# Simulation failed
+# ** Note: $stop    : C:/intelFPGA/Verilog Projects/single cycle RISC_V/RISC_V_TB.v(52)
+#    Time: 170 us  Iteration: 1  Instance: /RISC_V_TB
+# Break in Module RISC_V_TB at C:/intelFPGA/Verilog Projects/single cycle RISC_V/RISC_V_TB.v line 52
+# Compile of Data_Memory.v was successful.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.Data_Memory
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# Simulation failed
+# ** Note: $stop    : C:/intelFPGA/Verilog Projects/single cycle RISC_V/RISC_V_TB.v(52)
+#    Time: 170 us  Iteration: 1  Instance: /RISC_V_TB
+# Break in Module RISC_V_TB at C:/intelFPGA/Verilog Projects/single cycle RISC_V/RISC_V_TB.v line 52
+# Compile of RISC_V_TB.v was successful.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.RISC_V_TB
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# ** Note: $stop    : C:/intelFPGA/Verilog Projects/single cycle RISC_V/RISC_V_TB.v(30)
+#    Time: 1005 us  Iteration: 1  Instance: /RISC_V_TB
+# Break in Module RISC_V_TB at C:/intelFPGA/Verilog Projects/single cycle RISC_V/RISC_V_TB.v line 30
+restart -f
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# ** Note: $stop    : C:/intelFPGA/Verilog Projects/single cycle RISC_V/RISC_V_TB.v(30)
+#    Time: 1005 us  Iteration: 1  Instance: /RISC_V_TB
+# Break in Module RISC_V_TB at C:/intelFPGA/Verilog Projects/single cycle RISC_V/RISC_V_TB.v line 30
+# End time: 22:46:52 on Sep 20,2024, Elapsed time: 0:54:05
+# Errors: 0, Warnings: 1

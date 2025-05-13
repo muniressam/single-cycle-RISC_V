@@ -1,0 +1,99 @@
+{C:/intelFPGA/Verilog Projects/single cycle RISC_V/Add_PC_Target.v} {1 {vlog -work work -stats=none {C:/intelFPGA/Verilog Projects/single cycle RISC_V/Add_PC_Target.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module Add_PC_Target
+
+Top level modules:
+	Add_PC_Target
+
+} {} {}} {C:/intelFPGA/Verilog Projects/single cycle RISC_V/PC_Next.v} {1 {vlog -work work -stats=none {C:/intelFPGA/Verilog Projects/single cycle RISC_V/PC_Next.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module PC_Next
+
+Top level modules:
+	PC_Next
+
+} {} {}} {C:/intelFPGA/Verilog Projects/single cycle RISC_V/Extend_imm.v} {1 {vlog -work work -stats=none {C:/intelFPGA/Verilog Projects/single cycle RISC_V/Extend_imm.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module Extend_imm
+
+Top level modules:
+	Extend_imm
+
+} {} {}} {C:/intelFPGA/Verilog Projects/single cycle RISC_V/RISC_V_TB.v} {1 {vlog -work work -stats=none {C:/intelFPGA/Verilog Projects/single cycle RISC_V/RISC_V_TB.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module RISC_V_TB
+
+Top level modules:
+	RISC_V_TB
+
+} {} {}} {C:/intelFPGA/Verilog Projects/single cycle RISC_V/PC.v} {1 {vlog -work work -stats=none {C:/intelFPGA/Verilog Projects/single cycle RISC_V/PC.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module PC
+
+Top level modules:
+	PC
+
+} {} {}} {C:/intelFPGA/Verilog Projects/single cycle RISC_V/RICS_V.v} {1 {vlog -work work -stats=none {C:/intelFPGA/Verilog Projects/single cycle RISC_V/RICS_V.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module RISC_V
+
+Top level modules:
+	RISC_V
+
+} {} {}} {C:/intelFPGA/Verilog Projects/single cycle RISC_V/Control_Unit.v} {1 {vlog -work work -stats=none {C:/intelFPGA/Verilog Projects/single cycle RISC_V/Control_Unit.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module Control_Unit
+
+Top level modules:
+	Control_Unit
+
+} {} {}} {C:/intelFPGA/Verilog Projects/single cycle RISC_V/Data_Memory.v} {1 {vlog -work work -stats=none {C:/intelFPGA/Verilog Projects/single cycle RISC_V/Data_Memory.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module Data_Memory
+
+Top level modules:
+	Data_Memory
+
+} {} {}} {C:/intelFPGA/Verilog Projects/single cycle RISC_V/ALU.v} {1 {vlog -work work -stats=none {C:/intelFPGA/Verilog Projects/single cycle RISC_V/ALU.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module ALU
+
+Top level modules:
+	ALU
+
+} {} {}} {C:/intelFPGA/Verilog Projects/single cycle RISC_V/Instruction_Memory.v} {1 {vlog -work work -stats=none {C:/intelFPGA/Verilog Projects/single cycle RISC_V/Instruction_Memory.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module Instruction_Memory
+
+Top level modules:
+	Instruction_Memory
+
+} {} {}} {C:/intelFPGA/Verilog Projects/single cycle RISC_V/Add_PC_Plus4.v} {1 {vlog -work work -stats=none {C:/intelFPGA/Verilog Projects/single cycle RISC_V/Add_PC_Plus4.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module Add_PC_Plus4
+
+Top level modules:
+	Add_PC_Plus4
+
+} {} {}} {C:/intelFPGA/Verilog Projects/single cycle RISC_V/Register_File.v} {1 {vlog -work work -stats=none {C:/intelFPGA/Verilog Projects/single cycle RISC_V/Register_File.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module Register_File
+
+Top level modules:
+	Register_File
+
+} {} {}} {C:/intelFPGA/Verilog Projects/single cycle RISC_V/Imm_MUX.v} {1 {vlog -work work -stats=none {C:/intelFPGA/Verilog Projects/single cycle RISC_V/Imm_MUX.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module Imm_MUX
+
+Top level modules:
+	Imm_MUX
+
+} {} {}} {C:/intelFPGA/Verilog Projects/single cycle RISC_V/MUX_3x1.v} {1 {vlog -work work -stats=none {C:/intelFPGA/Verilog Projects/single cycle RISC_V/MUX_3x1.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module MUX_3x1
+
+Top level modules:
+	MUX_3x1
+
+} {} {}}

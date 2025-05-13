@@ -1,0 +1,49 @@
+
+`timescale 1us/1ns
+module RISC_V_TB #(parameter width = 32) ();
+ 
+reg CLK ;
+reg RST ;
+wire [width -  1: 0] DataAdr ;
+wire [width - 1 : 0] WriteData;
+wire                 MemWrite ;
+
+
+localparam CLK_PERIOD = 10;
+
+always #(CLK_PERIOD / 2)  CLK = ~CLK;
+
+RISC_V #(.width(width)) DUT (
+.CLK(CLK),
+.RST(RST),
+.DataAdr(DataAdr),
+.WriteData(WriteData),
+.MemWrite(MemWrite)
+);
+  
+ initial begin
+        CLK = 1;    RST = 0;
+
+        @(negedge CLK)  RST = 1;
+
+        repeat (1000)  @(negedge CLK);
+        $stop;
+    end
+	/*
+   initial begin
+    
+      CLK=0;
+      RST=0;
+     #5 	 RST=1;
+     #10	RST=1;	 
+
+     #4000;
+      $stop;
+    end
+	*/
+
+
+endmodule
+
+
+
